@@ -26,7 +26,7 @@ trait Routes extends HttpService
   val route =
     path("addTodo")
   {
-    addToDO
+    addToDo
   }~path("login")
   {
     login

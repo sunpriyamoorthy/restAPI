@@ -9,7 +9,7 @@ import spray.routing.HttpService
 trait TodoHandler extends HttpService{
 
   def addToDo=post{
-    
+
     complete("")
   }
 
