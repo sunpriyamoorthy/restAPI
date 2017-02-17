@@ -24,7 +24,8 @@ trait Routes extends HttpService
 
 
   val route =
-    path("login")
+
+   path("login")
   {
     post{
       entity(as[String])
@@ -110,6 +111,8 @@ trait Routes extends HttpService
         }
       }
     }
+
+
 
   def userDashBorad(userID:Int):Array[(Int,String)]={
     val rs = Mysqlclient.getResultSet("select * from todo where u_id="+userID+");")
