@@ -108,7 +108,7 @@ trait Routes extends HttpService{
     }
 
   def userDashBorad(userID:Int):Array[(Int,String)]={
-    val rs = Mysqlclient.getResultSet("select * from todo where u_id="+userID+");")
+    val rs = Mysqlclient.getResultSet("select * from todo where user_id="+userID+"")
     val result=new collection.mutable.ArrayBuffer[(Int,String)]
     while (rs.next())
       {
