@@ -1,5 +1,6 @@
 package com.hm.routes
 
+import com.hm.connector.Mysqlclient
 import spray.routing.HttpService
 
 /**
@@ -7,4 +8,13 @@ import spray.routing.HttpService
   */
 trait TodoHandler extends HttpService{
 
+  def addToDo=post{
+    
+    complete("")
+  }
+
+  def insertTodo(message:String,userID:Int)={
+    val rs=Mysqlclient.executeQuery("insert into todo(user_id,message) values ('"+userID+",'"+message+"')")
+    rs
+  }
 }

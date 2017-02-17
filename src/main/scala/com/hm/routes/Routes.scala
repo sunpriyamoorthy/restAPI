@@ -26,9 +26,7 @@ trait Routes extends HttpService
   val route =
     path("addTodo")
   {
-    post{
-        complete("")
-    }
+    addToDO
   }~path("login")
   {
     login
@@ -61,9 +59,6 @@ trait Routes extends HttpService
 
 
 
-  def insertTodo(message:String,userID:Int)={
-    val rs=Mysqlclient.executeQuery("insert into todo(user_id,message) values ('"+userID+",'"+message+"')")
-    rs
-  }
+
 
 }
