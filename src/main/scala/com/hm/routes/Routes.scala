@@ -8,6 +8,8 @@ import spray.http.MediaTypes.`text/html`
 import spray.json.JsString
 import spray.routing.HttpService
 import spray.json._
+import collection.JavaConversions._
+import collection.JavaConverters
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 /**
@@ -53,13 +55,15 @@ trait Routes extends HttpService{
     }
   }~path("user")
   {
+
     optionalCookie("userName") {
       case Some(nameCookie) => {
         val userId = nameCookie.content.toInt
-        userDashBorad(userId)
+        val r=userDashBorad(userId)
 
-      
-        complete("")
+
+
+        complete(JsArray(r.map(i=>JsObject("id"->JsNumber(i._1),"message"->JsString(i._2))).toVector).prettyPrint)
       }
       case None => complete("No user logged in")
     }
@@ -103,15 +107,14 @@ trait Routes extends HttpService{
       }
     }
 
-  def userDashBorad(userID:Int):util.ArrayList[Array[Any]]={
-    val rs = Mysqlclient.getResultSet("select * from todo where u_id="+userID+");");
-    val result=new util.ArrayList[Array[Any]]
+  def userDashBorad(userID:Int):Array[(Int,String)]={
+    val rs = Mysqlclient.getResultSet("select * from todo where u_id="+userID+");")
+    val result=new collection.mutable.ArrayBuffer[(Int,String)]
     while (rs.next())
       {
-
-        result.add(Array(rs.getInt("todo_id"),rs.getString("message")))
+        result.add((rs.getInt("todo_id"),rs.getString("message")))
       }
-      result
+      result.toArray
 
   }
 
