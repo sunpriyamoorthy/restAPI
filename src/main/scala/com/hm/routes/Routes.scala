@@ -15,7 +15,11 @@ import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 /**
   * Created by hari on 17/2/17.
   */
-trait Routes extends HttpService{
+trait Routes extends HttpService
+  with TodoHandler
+  with GroupsHandler
+  with UserHandler
+  with AuthenticationHandler {
 
 
 
