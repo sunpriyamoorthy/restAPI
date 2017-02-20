@@ -24,6 +24,8 @@ trait Routes extends HttpService
 
 
   val route =
+
+
     path("addTodo")
   {
     addToDo
@@ -39,8 +41,12 @@ trait Routes extends HttpService
    logout
   }~path("signup")
   {
-    signup
-  }~path("") {
+      signup
+
+    }~path("createGroup") {
+  createGroup
+}~path("") {
+
       get {
         respondWithMediaType(`text/html`) { // XML is marshalled to `text/xml` by default, so we simply override here
           complete {
@@ -54,6 +60,18 @@ trait Routes extends HttpService
       }
     }
 
+
+
+
+  def userDashBoard(userID:Int):Array[(Int,String)]= {
+    val rs = Mysqlclient.getResultSet("select * from todo where u_id=" + userID + ");")
+    val result = new collection.mutable.ArrayBuffer[(Int, String)]
+    while (rs.next()) {
+      result.add((rs.getInt("todo_id"), rs.getString("message")))
+    }
+    result.toArray
+
+  }
 
 
 
