@@ -10,6 +10,7 @@ import spray.json._
 trait GroupsHandler extends HttpService{
 
 
+
   /*
   *
   * Json Parameter = {"id":"1",
@@ -39,5 +40,6 @@ trait GroupsHandler extends HttpService{
 //    val rs=Mysqlclient.executeQuery("insert into group values ("+1+",'"+gName+"','"++"')")
 //    rs
 //  }
+
 
 }
