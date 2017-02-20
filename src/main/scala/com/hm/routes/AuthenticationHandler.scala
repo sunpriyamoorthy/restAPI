@@ -17,8 +17,8 @@ trait AuthenticationHandler extends HttpService{
     {
       body=>{
         val json=body.parseJson.asJsObject
-        val u=json.getFields("userName").head.asInstanceOf[JsString].value
-        val userName:String=if(json.getFields("userName").nonEmpty){
+        val u=json.getFields("user_name").head.asInstanceOf[JsString].value
+        val userName:String=if(json.getFields("user_name").nonEmpty){
 
           json.getFields("userName").head.asInstanceOf[JsString].value
         }
