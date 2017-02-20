@@ -24,86 +24,35 @@ trait Routes extends HttpService
 
 
   val route =
-    path("login")
+
+
+    path("addTodo")
   {
-    post{
-      entity(as[String])
-      {
-        body=>{
-          val json=body.parseJson.asJsObject
-          val u=json.getFields("userName").head.asInstanceOf[JsString].value
-          val userName:String=if(json.getFields("userName").nonEmpty){
-
-            json.getFields("userName").head.asInstanceOf[JsString].value
-          }
-          else
-            {
-              ""
-            }
-          val password = if(json.getFields("password").nonEmpty){
-            json.getFields("password").head.asInstanceOf[JsString].value
-          } else {
-            ""
-          }
-          if(loginCheck(userName,password)._1){
-            val uid=loginCheck(userName,password)._2
-            setCookie(HttpCookie("userName",content = ""+uid)) {
-              complete("User has logged in ")
-            }
-          }else {
-            complete("wrong credentials")
-          }
-        }
-      }
-
-    }
+    addToDo
+  }~path("login")
+  {
+    login
   }~path("user")
   {
 
-    optionalCookie("userName") {
-      case Some(nameCookie) => {
-        val userId = nameCookie.content.toInt
-        val r=userDashBorad(userId)
-
-
-
-        complete(JsArray(r.map(i=>JsObject("id"->JsNumber(i._1),"message"->JsString(i._2))).toVector).prettyPrint)
-      }
-      case None => complete("No user logged in")
-    }
+    user
   }~path("logout")
   {
-   deleteCookie("userName")
-    {
-      complete("user Logged out")
-    }
+   logout
   }~path("signup")
   {
-    post{
-      entity(as[String])
-      {
-        body=>{
-          val json=body.parseJson.asJsObject
-          val name=json.getFields("name").head.asInstanceOf[JsString].value
-          val userName=json.getFields("userName").head.asInstanceOf[JsString].value
-          val password=json.getFields("password").head.asInstanceOf[JsString].value
-          if(!registerUser(name,userName,password)) {
-            complete("signup successful")
-          }
-          else {
-            complete("signup failed")
-          }
-        }
-      }
+      signup
 
-    }
-  }~path("") {
+    }~path("createGroup") {
+  createGroup
+}~path("") {
+
       get {
         respondWithMediaType(`text/html`) { // XML is marshalled to `text/xml` by default, so we simply override here
           complete {
             <html>
               <body>
-                <h1>Say hello to <i>spray-routing</i> on <i>spray-can</i>!</h1>
+                <h1>welcome to Todo :)</h1>
               </body>
             </html>
           }
@@ -111,33 +60,23 @@ trait Routes extends HttpService
       }
     }
 
-  def userDashBorad(userID:Int):Array[(Int,String)]={
-    val rs = Mysqlclient.getResultSet("select * from todo where u_id="+userID+");")
-    val result=new collection.mutable.ArrayBuffer[(Int,String)]
-    while (rs.next())
-      {
-        result.add((rs.getInt("todo_id"),rs.getString("message")))
-      }
-      result.toArray
 
-  }
 
-  def loginCheck(username:String,password:String)={
-    val rs = Mysqlclient.getResultSet("select * from user where user_name='"+username+"' AND password='"+password+"'")
-    val response = if(rs.next()){
-      (true,rs.getInt("u_id"))
 
-    }else{
-      println("Invalid session")
-      (false,0)
+  def userDashBoard(userID:Int):Array[(Int,String)]= {
+    val rs = Mysqlclient.getResultSet("select * from todo where u_id=" + userID + ");")
+    val result = new collection.mutable.ArrayBuffer[(Int, String)]
+    while (rs.next()) {
+      result.add((rs.getInt("todo_id"), rs.getString("message")))
     }
-    rs.close()
-    response
+    result.toArray
+
   }
-  def registerUser(name:String,userName:String,password:String)={
-    val rs=Mysqlclient.executeQuery("insert into user(name,user_name,password) values ('"+name+"','"+userName+"','"+password+"')")
-    rs
-  }
+
+
+
+
+
 
 
 }
