@@ -13,14 +13,14 @@ trait UserHandler extends HttpService{
   def user=optionalCookie("userName") {
     case Some(nameCookie) => {
       val userId = nameCookie.content.toInt
-      val r=userDashBorad(userId)
+      val r=userDashBoard(userId)
 
 
       complete(JsArray(r.map(i=>JsObject("id"->JsNumber(i._1),"message"->JsString(i._2))).toVector).prettyPrint)
     }
     case None => complete("No user logged in")
   }
-  def userDashBorad(userID:Int):Array[(Int,String)]={
+  def userDashBoard(userID:Int):Array[(Int,String)]={
     val rs = Mysqlclient.getResultSet("select * from todo where user_id="+userID+"")
     val result=new collection.mutable.ArrayBuffer[(Int,String)]
     while (rs.next())

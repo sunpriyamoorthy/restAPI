@@ -25,10 +25,15 @@ trait Routes extends HttpService
 
   val route =
 
-
     path("addTodo")
+    {
+      addToDo
+    }~ path("editTodo")
+    {
+      updateTodo
+    }~ path("deleteTodo")
   {
-    addToDo
+    deleteToDo
   }~path("login")
   {
     login
@@ -63,15 +68,7 @@ trait Routes extends HttpService
 
 
 
-  def userDashBoard(userID:Int):Array[(Int,String)]= {
-    val rs = Mysqlclient.getResultSet("select * from todo where u_id=" + userID + ");")
-    val result = new collection.mutable.ArrayBuffer[(Int, String)]
-    while (rs.next()) {
-      result.add((rs.getInt("todo_id"), rs.getString("message")))
-    }
-    result.toArray
 
-  }
 
 
 
