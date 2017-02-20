@@ -7,4 +7,5 @@ import spray.routing.HttpService
   */
 trait GroupsHandler extends HttpService{
 
+
 }
