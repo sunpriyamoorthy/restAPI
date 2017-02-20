@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 [info] Updating {file:/home/sunpriya/Desktop/todo/project/}todo-build...
+=======
+<<<<<<< HEAD
+[info] Updating {file:/home/pooja/Downloads/todo/project/}todo-build...
+=======
+<<<<<<< HEAD
+[info] Updating {file:/home/rahul/todo/project/}todo-build...
+=======
+[info] Updating {file:/home/shirin/Downloads/todo/project/}todo-build...
+>>>>>>> c3bdd637966b7e44c3011d9af7385bb903f0bde8
+>>>>>>> master
+>>>>>>> 11059349f7cf5f55b3499299818106b490baddfb
 [debug] :: resolving dependencies :: default#todo-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -6131,6 +6143,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
+<<<<<<< HEAD
 [debug] :: resolution report :: resolve 1330ms :: artifacts dl 20ms
 [debug] 	report for default#todo-build;0.1-SNAPSHOT compile produced in /home/sunpriya/Desktop/todo/project/target/resolution-cache/reports/default-todo-build-compile.xml
 [debug] 	report for default#todo-build;0.1-SNAPSHOT runtime produced in /home/sunpriya/Desktop/todo/project/target/resolution-cache/reports/default-todo-build-runtime.xml
@@ -6146,4 +6159,57 @@
 [debug] 	report for default#todo-build;0.1-SNAPSHOT pom produced in /home/sunpriya/Desktop/todo/project/target/resolution-cache/reports/default-todo-build-pom.xml
 [debug] 	report for default#todo-build;0.1-SNAPSHOT scala-tool produced in /home/sunpriya/Desktop/todo/project/target/resolution-cache/reports/default-todo-build-scala-tool.xml
 [debug] 	resolve done (1330ms resolve - 20ms download)
+=======
+<<<<<<< HEAD
+[debug] :: resolution report :: resolve 2129ms :: artifacts dl 35ms
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-compile.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-runtime.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-test.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT provided produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-provided.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT optional produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-optional.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile-internal produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-compile-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime-internal produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-runtime-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test-internal produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-test-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT plugin produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-plugin.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT sources produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-sources.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT docs produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-docs.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT pom produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-pom.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT scala-tool produced in /home/pooja/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-scala-tool.xml
+[debug] 	resolve done (2129ms resolve - 35ms download)
+=======
+<<<<<<< HEAD
+[debug] :: resolution report :: resolve 1416ms :: artifacts dl 20ms
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-compile.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-runtime.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-test.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT provided produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-provided.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT optional produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-optional.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile-internal produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-compile-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime-internal produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-runtime-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test-internal produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-test-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT plugin produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-plugin.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT sources produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-sources.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT docs produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-docs.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT pom produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-pom.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT scala-tool produced in /home/rahul/todo/project/target/resolution-cache/reports/default-todo-build-scala-tool.xml
+[debug] 	resolve done (1416ms resolve - 20ms download)
+=======
+[debug] :: resolution report :: resolve 1398ms :: artifacts dl 18ms
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-compile.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-runtime.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-test.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT provided produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-provided.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT optional produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-optional.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT compile-internal produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-compile-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT runtime-internal produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-runtime-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT test-internal produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-test-internal.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT plugin produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-plugin.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT sources produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-sources.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT docs produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-docs.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT pom produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-pom.xml
+[debug] 	report for default#todo-build;0.1-SNAPSHOT scala-tool produced in /home/shirin/Downloads/todo/project/target/resolution-cache/reports/default-todo-build-scala-tool.xml
+[debug] 	resolve done (1398ms resolve - 18ms download)
+>>>>>>> c3bdd637966b7e44c3011d9af7385bb903f0bde8
+>>>>>>> master
+>>>>>>> 11059349f7cf5f55b3499299818106b490baddfb
 [info] Done updating.
